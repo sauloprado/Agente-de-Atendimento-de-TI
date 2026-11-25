@@ -1,30 +1,42 @@
 # Agente de Atendimento de TI
 
-Projeto educacional desenvolvido a partir do desafio de criação de um agente de atendimento da DIO.
+Projeto educacional da DIO. A Aurora Digital é fictícia.
 
-## Objetivo
+O chat foi feito em Python com Flask e HTML. As respostas automáticas são locais, selecionadas por palavras-chave configuradas em respostas.json. Não usa IA, não envia mensagens a serviços externos e não acessa sistemas corporativos.
 
-Orientar colaboradores sobre solicitações de software, equipamentos e suporte técnico, com respostas claras e limites definidos.
+## Baixar
 
-## Cenário fictício
+[Baixar o projeto completo em ZIP](https://github.com/sauloprado/Agente-de-Atendimento-de-TI/raw/refs/heads/main/Agente-de-Atendimento-de-TI.zip)
 
-O agente representa a empresa fictícia Aurora Digital. Os exemplos não utilizam dados reais de pessoas, empresas ou sistemas internos.
+O pacote inclui o aplicativo, as respostas, o prompt, a interface, a imagem e os testes.
 
-## Funcionamento previsto
+## Executar no Windows
 
-- Conversa pelo terminal do VS Code.
-- Aplicação em Python integrada ao Ollama local.
-- Comportamento definido no arquivo prompt.md.
-- Histórico mantido somente durante a sessão.
-- Orientação para atendimento humano quando necessário.
+Requer Python 3.10 ou superior. No PowerShell, na pasta do projeto:
 
-## Limites
+~~~powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python app.py
+~~~
 
-O agente não acessa sistemas corporativos, não aprova solicitações e não executa compras ou alterações de acesso. Também não deve solicitar credenciais nem inventar informações.
+Abra http://127.0.0.1:5000. Não é necessária chave de API.
 
-## Situação do projeto
+Edite respostas.json para ajustar palavras-chave e respostas. Perguntas que não correspondam às regras recebem uma orientação padrão. O aplicativo não consulta status, estoque, licenças ou solicitações, nem abre ou encaminha chamados.
 
-Em desenvolvimento. A execução local e os testes de comportamento ainda serão validados.
+## Testes
+
+~~~powershell
+python -m unittest discover -s tests
+~~~
+
+## Arquivos principais
+
+- app.py: servidor web Flask e validação das mensagens.
+- responder.py e respostas.json: classificação local e base de respostas.
+- templates e static: interface HTML, CSS e JavaScript.
+- prompt.md: instruções originais do agente.
 
 ## Autor
 
