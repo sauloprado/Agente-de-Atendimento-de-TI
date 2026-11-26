@@ -1,5 +1,7 @@
 # Agente de Atendimento de TI
 
+![Capa do projeto](capa-repositorio.png)
+
 Projeto educacional da DIO. A Aurora Digital é fictícia.
 
 O chat foi feito em Python com Flask e HTML. As respostas automáticas são locais, selecionadas por palavras-chave configuradas em respostas.json. Não usa IA, não envia mensagens a serviços externos e não acessa sistemas corporativos.
